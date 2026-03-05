@@ -1,0 +1,37 @@
+[template]
+name = "tui"
+description = "Go TUI application with Charm Bubbletea, Bubbles, and Lipgloss"
+version = "1.0.0"
+author = "Alex Cabrera"
+url = "https://github.com/theydontwantyoutovibecode/tui-made-in-dade"
+aliases = ["tui-app", "terminal"]
+
+[scaffold]
+exclude = [".git", "dade.toml", ".dade", "bin"]
+setup = "./setup.sh"
+setup_interactive = true
+
+[serve]
+type = "command"
+dev = "go run ."
+port_env = ""
+default_port = 0
+proxy = false
+
+[dev]
+setup = ["go mod download"]
+env = ["DEBUG=1"]
+
+[dev.messages]
+ready = "Launching TUI application"
+running = "Press Ctrl+C to stop"
+
+[build]
+command = "go build -o {{output}}/{{name}} ."
+output = "./bin"
+release_flags = "-ldflags '-s -w'"
+pre = ["go mod tidy"]
+
+[prod]
+setup = ["go build -o ./bin/app ."]
+env = []

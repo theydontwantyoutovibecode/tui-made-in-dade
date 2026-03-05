@@ -1,0 +1,22 @@
+# Binaries
+bin/
+*.exe
+
+# Go
+vendor/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Debug
+debug.log
+
+# justvibin
+.justvibin

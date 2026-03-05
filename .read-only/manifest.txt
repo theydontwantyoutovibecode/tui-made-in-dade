@@ -1,0 +1,6 @@
+# Reference libraries for Go TUI applications with Charm Bubbletea
+# These are cloned as shallow read-only copies for AI context
+
+https://github.com/charmbracelet/bubbletea.git
+https://github.com/charmbracelet/bubbles.git
+https://github.com/charmbracelet/lipgloss.git
